@@ -14,7 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* background-color:#206F59; */
 }
+/* 
+html, body{
+  height: 100%;
+} */
 
 .login {
   flex: 1;
@@ -101,7 +106,7 @@ body {
 }
 
 .curve {
-  margin-top: -10px;
+  margin-top: 0px;
   color: #206F59;
 }
 
@@ -110,6 +115,7 @@ body {
   color: #FFF;
   padding: 20px;
   text-align: center;
+  margin-top: -2px
 }
 
 .logo {

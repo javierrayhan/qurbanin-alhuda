@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="login.css">
-        <script src="login.js"></script>
+        <link rel="stylesheet" href="style/login.css">
+        <script type="module" src="script/login.js"></script>
         <title>Qurbanin-Login</title>
     </head>
 
@@ -24,12 +24,10 @@
                 <p class="pass-text">Pin 4-digit</p>
                 <input type="password" id="input-pin" placeholder="PIN 4 digit" maxlength="4" required>
 
-                <button onclick="handleLogin()" class="login-button"  id="login-button">Masuk</button>
+                <button class="login-button"  id="login-button">Masuk</button>
 
-                <p id="login-status" style="margin-top: 10px; font-weight: bold; color: green;"></p>
-
-
-
+                <p id="login-status" style="margin-bottom: 10%; font-size: 12px; font-weight: lighter; color: green;">‎ </p>
+                
                 <p class="login-warning">
                 Lupa PIN atau mengalami kendala? Hubungi admin melalui WhatsApp di:
                 <a href="https://wa.me/6281234567890" target="_blank" style="color: #206F59; text-decoration: underline;">
@@ -60,6 +58,7 @@
             </p>
 
         </div>
+        <script type="module" src="script/login.js"></script
     </body>
 
 </html>
