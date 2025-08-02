@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="login.css">
+        <script src="login.js"></script>
         <title>Qurbanin-Login</title>
     </head>
 
@@ -18,14 +19,18 @@
             <div class="login-form">
 
                 <p class="user-text">Nama Lengkap</p>
-                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="text" id="input-username" placeholder="Nama Lengkap" required>
 
                 <p class="pass-text">Pin 4-digit</p>
-                <input type="password" placeholder="PIN 4 digit" maxlength="4" required>
+                <input type="password" id="input-pin" placeholder="PIN 4 digit" maxlength="4" required>
 
-                <button class="login-button">Masuk</button>
+                <button onclick="handleLogin()" class="login-button"  id="login-button">Masuk</button>
 
-               <p class="login-warning">
+                <p id="login-status" style="margin-top: 10px; font-weight: bold; color: green;"></p>
+
+
+
+                <p class="login-warning">
                 Lupa PIN atau mengalami kendala? Hubungi admin melalui WhatsApp di:
                 <a href="https://wa.me/6281234567890" target="_blank" style="color: #206F59; text-decoration: underline;">
                     0812-3456-7890
