@@ -4,82 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style/dashboard.css">
+        <link rel="stylesheet" href="style/info.css">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script type="text/javascript" src="script/dashboard.js" defer></script>
-          <!-- <script src="script.js" type="text/javascript" defer></script> -->
-        <title>Qurbanin | Dashboard</title>
+        <script type="text/javascript" src="script/info.js" defer></script>
+        <title>Qurbanin | Recent</title>
 </head>
 <body>
-    <div class="profile">
-
-        <div class="profile-show"> <!--Flex row-->
-
-            <img src="assets/dummy-pfp.png" alt="" class="pfp">
-            <p class="greeting" id="welcome-msg">Assalamualaikum, User</p>
-            <button class="logout" id="logout-button">Keluar</button>
-
-        </div>
-
-        <div class="value-show"> <!--Flex row-->
-
-            <div class="total-value"> <!--Flex col-->
-
-                <p class="total-rupiah" id="total-msg">Rp. NO DATA</p>
-                <p class="total-text">Total Tabungan</p>
-
-            </div>
-
-            <div class="last-value"> <!--Flex col-->
-
-                <p class="last-rupiah" id="last-saving-msg">Rp. NO DATA</p>
-                <p class="last-text">Tabungan Terakhir</p>
-
-            </div> 
-
-        </div>
-
-    </div>
-
-    <div class="value-history" > <!--Flex col-->
-
-        <div class="value-header"> <!--Flex row-->
-
-            <p class="history-text">Riwayat Tabungan</p>
-            <a class="show-all" id="show-all">Lihat semua</a>
-
-        </div>
-
-        <div class="filter"> <!--Flex row-->
-
-            <button class="week" id="week-button">1 Minggu Terakhir</button>
-            <button class="month" id="month-button">30 Hari Terakhir</button>
-
-        </div>
-
-        <div class="value" id="periode-container"> <!--Flex col-->
-
-            <p class="date" id="periode-index">PERIODE KE-P</p>
-            <div class="value-box">
-                <p class="value-rp" id="value-index">Rp. NO DATA</p>
-            </div>
-
-        </div>
-
-    </div>
 
 
     <div class="bottom-navbar">
 
-        <a href="" class="nav-item" id="home">
+        <a href="dashboard.html" class="nav-item" id="home">
             <!-- <img src="assets/home.svg" alt="" class="icon"> -->
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><path fill="#fff" d="M39.5,43h-9c-1.381,0-2.5-1.119-2.5-2.5v-9c0-1.105-0.895-2-2-2h-4c-1.105,0-2,0.895-2,2v9c0,1.381-1.119,2.5-2.5,2.5h-9	C7.119,43,6,41.881,6,40.5V21.413c0-2.299,1.054-4.471,2.859-5.893L23.071,4.321c0.545-0.428,1.313-0.428,1.857,0L39.142,15.52	C40.947,16.942,42,19.113,42,21.411V40.5C42,41.881,40.881,43,39.5,43z"/></svg>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><path  fill="#007b5e"d="M39.5,43h-9c-1.381,0-2.5-1.119-2.5-2.5v-9c0-1.105-0.895-2-2-2h-4c-1.105,0-2,0.895-2,2v9c0,1.381-1.119,2.5-2.5,2.5h-9	C7.119,43,6,41.881,6,40.5V21.413c0-2.299,1.054-4.471,2.859-5.893L23.071,4.321c0.545-0.428,1.313-0.428,1.857,0L39.142,15.52	C40.947,16.942,42,19.113,42,21.411V40.5C42,41.881,40.881,43,39.5,43z"/></svg>
             <p class="icon-text" id="home-text">Beranda</p>
         </a>
 
-        <a href="store.html" class="nav-item" id="saving">
+        <a href="/store.html" class="nav-item" id="saving">
             <!-- <img src="assets/save-money.svg" alt="" class="icon"> -->
-            <svg fill="#007b5e" class="icon"
+            <svg class="icon"  fill="#007b5e" 
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 230"
             xml:space="preserve">
             <path d="M245.2,133.4l-62,62c-7.2,7.5-18,12.8-29.4,12.8h-46.6c-5.9,0-11.2,2.3-15.1,6.2L76.6,229H6l67.9-68.8l-0.1-0.1
@@ -94,7 +37,7 @@
             <p class="icon-text" id="saving-text">Setor</p>
         </a>
 
-        <a href="hubcenter.html"  class="nav-item" id="call">
+        <a href="hubcenter.html" class="nav-item" id="call">
             <!-- <img src="assets/call.svg" alt="" class="icon"> -->
             <svg class="icon" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 
@@ -118,12 +61,12 @@
 
         <a href="/info.html" class="nav-item" id="info">
             <!-- <img src="assets/info.svg" alt="" class="icon"> -->
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="60px" height="60px">  <path fill="#007b5e" d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16,21h-2v-7h2V21z M15,11.5 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S15.828,11.5,15,11.5z"/></svg>
+             <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="60px" height="60px">  <path fill="#fff" d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16,21h-2v-7h2V21z M15,11.5 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S15.828,11.5,15,11.5z"/></svg>
             <p class="icon-text" id="info-text">informasi</p>
         </a>
 
     </div>
 
-    <script type="module" src="script/dashboard.js"></script>
+    <script type="module" src="script/info.js"></script>
 </body>
 </html>

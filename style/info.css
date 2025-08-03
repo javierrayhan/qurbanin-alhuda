@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 58px; /* Reserve space for bottom navbar */
+}
+
+/* Bottom Navbar */ 
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #9EBFB6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+  /* border-top: 1px solid #ccc; */
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding-top: 4px;
+}
+
+.icon-text{
+  color: #007b5e;
+}
+
+#info{
+ background-color: #007b5e;
+}
+
+#info-text{
+  color: white;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  .total-rupiah {
+    font-size: 1.7rem;
+  }
+  /* .history-text {
+    font-size: 1rem;
+  } */
+  /* .value-box {
+    font-size: 1rem;
+  } */
+
+  .bottom-navbar {
+    height: 60px;
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}
