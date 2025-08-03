@@ -214,9 +214,7 @@
 
 let userData = [];
 
-const sheetId = "1wKBb-g56ayR-vRK9QZ1K60jL7E-TsaADMnF0K7jne00";
-const sheetName = encodeURIComponent("Sheet1");
-const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+import { sheetId, sheetName, sheetURL } from '../config/gdocsClient.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('currentUser'));
