@@ -143,10 +143,11 @@ body {
   transform: scale(1.05); 
 }
 
-.value {
+.value, .periode-item {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-bottom: 9px;
 }
 
 .date {

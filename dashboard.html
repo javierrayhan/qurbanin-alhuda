@@ -6,7 +6,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style/dashboard.css">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script type="module" src="script/dashboard.js"></script>
+        <script type="text/javascript" src="script/dashboard.js" defer></script>
+          <!-- <script src="script.js" type="text/javascript" defer></script> -->
         <title>Qurbanin | Dashboard</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
         <div class="profile-show"> <!--Flex row-->
 
             <img src="assets/dummy-pfp.png" alt="" class="pfp">
-            <p class="greeting">Assalamualaikum, User</p>
+            <p class="greeting" id="welcome-msg">Assalamualaikum, User</p>
 
         </div>
 
@@ -23,17 +24,17 @@
 
             <div class="total-value"> <!--Flex col-->
 
-                <p class="total-rupiah">Rp. 1,234,567.89</p>
+                <p class="total-rupiah" id="total-msg">Rp. NO DATA</p>
                 <p class="total-text">Total Tabungan</p>
 
             </div>
 
             <div class="last-value"> <!--Flex col-->
 
-                <p class="last-rupiah">Rp. 123,456.78</p>
+                <p class="last-rupiah" id="last-saving-msg">Rp. NO DATA</p>
                 <p class="last-text">Tabungan Terakhir</p>
 
-            </div>
+            </div> 
 
         </div>
 
@@ -50,16 +51,16 @@
 
         <div class="filter"> <!--Flex row-->
 
-            <button class="week">1 Minggu Terakhir</button>
-            <button class="month">30 Hari Terakhir</button>
+            <button class="week" id="week-button">1 Minggu Terakhir</button>
+            <button class="month" id="month-button">30 Hari Terakhir</button>
 
         </div>
 
-        <div class="value"> <!--Flex col-->
+        <div class="value" id="periode-container"> <!--Flex col-->
 
-            <p class="date">PERIODE KE-P</p>
+            <p class="date" id="periode-index">PERIODE KE-P</p>
             <div class="value-box">
-                <p class="value-rp">Rp. 123,456.78</p>
+                <p class="value-rp" id="value-index">Rp. NO DATA</p>
             </div>
 
         </div>
