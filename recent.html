@@ -4,55 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style/dashboard.css">
+        <link rel="stylesheet" href="style/recent.css">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script type="text/javascript" src="script/dashboard.js" defer></script>
+        <script type="text/javascript" src="script/recent.js" defer></script>
           <!-- <script src="script.js" type="text/javascript" defer></script> -->
-        <title>Qurbanin | Dashboard</title>
+        <title>Qurbanin | Recent</title>
 </head>
 <body>
-    <div class="profile">
-
-        <div class="profile-show"> <!--Flex row-->
-
-            <img src="assets/dummy-pfp.png" alt="" class="pfp">
-            <p class="greeting" id="welcome-msg">Assalamualaikum, User</p>
-
-        </div>
-
-        <div class="value-show"> <!--Flex row-->
-
-            <div class="total-value"> <!--Flex col-->
-
-                <p class="total-rupiah" id="total-msg">Rp. NO DATA</p>
-                <p class="total-text">Total Tabungan</p>
-
-            </div>
-
-            <div class="last-value"> <!--Flex col-->
-
-                <p class="last-rupiah" id="last-saving-msg">Rp. NO DATA</p>
-                <p class="last-text">Tabungan Terakhir</p>
-
-            </div> 
-
-        </div>
-
-    </div>
-
     <div class="value-history" > <!--Flex col-->
 
         <div class="value-header"> <!--Flex row-->
 
             <p class="history-text">Riwayat Tabungan</p>
-            <a class="show-all" id="show-all">Lihat semua</a>
+            <a href="/dashboard.html" class="show-all">Kembali</a>
 
         </div>
 
         <div class="filter"> <!--Flex row-->
 
-            <button class="week" id="week-button">1 Minggu Terakhir</button>
-            <button class="month" id="month-button">30 Hari Terakhir</button>
+            <button class="all" id="all-button">Semua</button>
+            <!-- <button class="month" id="month-button">30 Hari Terakhir</button> -->
 
         </div>
 
@@ -70,7 +41,7 @@
 
     <div class="bottom-navbar">
 
-        <a href="" class="nav-item" id="home">
+        <a href="dashboard.html" class="nav-item" id="home">
             <!-- <img src="assets/home.svg" alt="" class="icon"> -->
             <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><path fill="#fff" d="M39.5,43h-9c-1.381,0-2.5-1.119-2.5-2.5v-9c0-1.105-0.895-2-2-2h-4c-1.105,0-2,0.895-2,2v9c0,1.381-1.119,2.5-2.5,2.5h-9	C7.119,43,6,41.881,6,40.5V21.413c0-2.299,1.054-4.471,2.859-5.893L23.071,4.321c0.545-0.428,1.313-0.428,1.857,0L39.142,15.52	C40.947,16.942,42,19.113,42,21.411V40.5C42,41.881,40.881,43,39.5,43z"/></svg>
             <p class="icon-text" id="home-text">Beranda</p>
@@ -123,6 +94,6 @@
 
     </div>
 
-    <script type="module" src="script/dashboard.js"></script>
+    <script type="module" src="script/recent.js"></script>
 </body>
 </html>

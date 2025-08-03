@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 58px; /* Reserve space for bottom navbar */
+}
+
+/* Profile Section */
+.profile {
+  /* background: linear-gradient(to bottom, #1d8651, #2da36b); */
+  background-color: #206F59;
+  color: white;
+  padding: 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+
+.value-show {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 16px; */
+}
+
+.total-value, .last-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-rupiah {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.total-text, .last-text {
+  font-size: 0.6rem;
+}
+
+/* Tutorial */
+.tutorial-container {
+  max-width: 600px;
+  /* margin: 20px auto; */
+  padding: 2%;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #333;
+}
+
+.step {
+  margin-bottom: 20px;
+}
+
+.title-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  /* margin-bottom: 10px; */
+}
+
+.content-text {
+  font-size: 15px;
+  /* line-height: 1; */
+  color: #555;
+  white-space: pre-line;
+}
+
+.custom-list {
+  font-size: 15px;
+  padding-left: 20px;
+  margin-top: 12px;
+  color: #555;
+}
+
+.custom-list li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* Tambahan biar bullet list soft */
+/* .content-text::before {
+  content: '';
+} */
+
+/* Responsive sedikit */
+@media screen and (max-width: 600px) {
+  .tutorial-container {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .title-text {
+    font-size: 16px;
+  }
+
+  .content-text {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Bottom Navbar */
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #9EBFB6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+  /* border-top: 1px solid #ccc; */
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding-top: 4px;
+}
+
+.icon-text{
+  color: #007b5e;
+}
+
+#saving{
+ background-color: #007b5e;
+}
+
+#saving-text{
+  color: white;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  .total-rupiah {
+    font-size: 1.7rem;
+  }
+  /* .history-text {
+    font-size: 1rem;
+  } */
+  /* .value-box {
+    font-size: 1rem;
+  } */
+
+  .bottom-navbar {
+    height: 60px;
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}

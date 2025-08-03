@@ -220,18 +220,12 @@ const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=
 
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('currentUser'));
-    const weekBtn = document.getElementById("week-button");
-    const monthBtn = document.getElementById("month-button");
     const showAllLink = document.getElementById("show-all");
 
     if (!user) {
         window.location.href = '/index.html';
         return;
     }
-
-    const nama = user.nama_lengkap || user.username;
-    const namaFormatted = nama.charAt(0).toUpperCase() + nama.slice(1).toLowerCase();
-    document.getElementById('welcome-msg').textContent = `Assalamualaikum, ${namaFormatted}!`;
 
     fetch(sheetURL)
         .then((response) => response.text())
@@ -241,32 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('total-msg').textContent = "Gagal mengambil data.";
         });
 
-    if (weekBtn) {
-        weekBtn.addEventListener("click", () => {
-            console.log("📆 Week button clicked");
-            console.log("🧾 userData on week click:", userData);
-            renderPeriodeData(userData, 7);
-            setActiveButton("week-button");
-        });
-    }
-
-    if (monthBtn) {
-        monthBtn.addEventListener("click", () => {
-            console.log("📆 Month button clicked");
-            console.log("🧾 userData on month click:", userData);
-            renderPeriodeData(userData, 30);
-            setActiveButton("month-button");
-        });
-    }
-
     if (showAllLink) {
-    showAllLink.addEventListener("click", (e) => {
-      e.preventDefault(); // buat ngehindarin reload atau default behavior
-      console.log("🔍 Show All clicked");
-
-      // ✅ Arahkan ke halaman berikutnya
-      window.location.href = '/recent.html'
-    });
   }
 });
 
@@ -300,19 +269,6 @@ function handleResponse(csvText, username) {
 
     const lastRow = userData[userData.length - 1];
     const lastSaving = getLastValidSaving(lastRow);
-    const lastFormatted = lastSaving.formatted.replace(/^Rp/, 'Rp');
-
-    document.getElementById('last-saving-msg').textContent = `${lastFormatted}`;
-
-    console.log("📊 Auto renderPeriodeData with 30 days");
-    renderPeriodeData(userData, 30);
-}
-
-function setActiveButton(activeId) {
-    const weekBtn = document.getElementById("week-button");
-    const monthBtn = document.getElementById("month-button");
-    weekBtn.classList.toggle("active", activeId === "week-button");
-    monthBtn.classList.toggle("active", activeId === "month-button");
 }
 
 function csvToObjects(csv) {
@@ -386,75 +342,3 @@ function getLastValidSaving(userRow) {
     };
 }
 
-function renderPeriodeData(userData, daysBack = 30) {
-    const container = document.getElementById('periode-container');
-    if (!container) return;
-
-    container.innerHTML = "";
-    if (!userData || userData.length === 0) return;
-
-    const lastRow = userData[userData.length - 1];
-    const keys = Object.keys(lastRow).filter(k => k !== "Nama" && k !== "TOTAL");
-
-    const months = ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"];
-    const now = new Date();
-    const currentMonth = now.getMonth(); // 0-indexed
-    const currentDate = now.getDate();
-
-    const daysInPeriod = 7;
-    const currentPeriodInMonth = Math.ceil(currentDate / daysInPeriod);
-    const totalPeriods = Math.floor(daysBack / daysInPeriod);
-
-    const recentPeriods = [];
-    let monthIndex = currentMonth;
-    let periodIndex = currentPeriodInMonth;
-
-    for (let i = 0; i < totalPeriods; i++) {
-        const monthStr = months[monthIndex];
-        recentPeriods.push(`${monthStr} P-${periodIndex}`);
-
-        periodIndex--;
-        if (periodIndex < 1) {
-            periodIndex = 4;
-            monthIndex--;
-            if (monthIndex < 0) monthIndex = 11;
-        }
-    }
-
-    console.log("📦 All lastRow keys:", Object.keys(lastRow));
-    console.log("🔁 Recent periods:", recentPeriods);
-
-    recentPeriods.forEach(rp => {
-        const key = Object.keys(lastRow).find(k => k.trim().toUpperCase() === rp.toUpperCase());
-        if (!key) {
-            console.warn(`⚠️ Key not found for period: ${rp}`);
-            return;
-        }
-
-        const val = parseIndoCurrency(lastRow[key]);
-        const formatted = new Intl.NumberFormat('id-ID', {
-            style: 'currency',
-            currency: 'IDR',
-            minimumFractionDigits: 0
-        }).format(val);
-
-        const wrapper = document.createElement("div");
-        wrapper.classList.add("periode-item");
-
-        const title = document.createElement("p");
-        title.classList.add("date");
-        title.textContent = `PERIODE ${key}`;
-
-        const box = document.createElement("div");
-        box.classList.add("value-box");
-
-        const value = document.createElement("p");
-        value.classList.add("value-rp");
-        value.textContent = formatted;
-
-        box.appendChild(value);
-        wrapper.appendChild(title);
-        wrapper.appendChild(box);
-        container.appendChild(wrapper);
-    });
-}
