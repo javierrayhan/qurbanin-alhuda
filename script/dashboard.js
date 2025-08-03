@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const weekBtn = document.getElementById("week-button");
     const monthBtn = document.getElementById("month-button");
     const showAllLink = document.getElementById("show-all");
+    const logoutBtn = document.getElementById("logout-button");
 
     if (!user) {
         window.location.href = '/index.html';
@@ -267,7 +268,19 @@ document.addEventListener('DOMContentLoaded', () => {
       // ✅ Arahkan ke halaman berikutnya
       window.location.href = '/recent.html'
     });
-  }
+    }
+
+    if (logoutBtn) {
+    logoutBtn.addEventListener("click", (l) => {
+      l.preventDefault(); // buat ngehindarin reload atau default behavior
+      console.log("Logout clicked");
+    
+      localStorage.removeItem('currentUser');
+
+      // ✅ Arahkan ke halaman berikutnya
+      window.location.href = '/index.html'
+    });
+    }
 });
 
 function handleResponse(csvText, username) {
